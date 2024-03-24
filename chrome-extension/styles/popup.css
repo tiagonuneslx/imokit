@@ -1,0 +1,96 @@
+:root {
+    --primary-color: #7518AF;
+    --secondary-color: #333;
+    --light-color: #f4f4f4;
+    --dark-color: #222;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:  #e1e1f1;
+    background-size: 600% 600%;
+    color: var(--dark-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 180px;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 2em; /* Increase the font size */
+    color: var(--dark-color); /* Change the color to black */
+    margin: 0;
+}
+
+#switchLabel {
+    font-size: 1.4em; /* Increase the font size */
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+#hidePropertiesSwitch {
+    width: 40px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+#hidePropertiesSwitch:checked {
+    background-image: linear-gradient(to right, #7518AF, #78B1F4);
+}
+
+#hidePropertiesSwitch.no-transition::before {
+    transition: none !important;
+}
+
+#hidePropertiesSwitch.no-transition {
+    transition: none !important;
+}
+
+#hidePropertiesSwitch::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+#hidePropertiesSwitch:checked::before {
+    transform: translateX(20px);
+}
+
+#switchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Add this line to vertically align the items */
+    width: 100%;
+}
